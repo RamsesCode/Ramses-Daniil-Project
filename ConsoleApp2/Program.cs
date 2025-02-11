@@ -2,6 +2,5 @@
 
 //test commit
 //test push
-//test pull
 
 Console.WriteLine("Hello Ramses and Daniil");
