@@ -13,8 +13,12 @@ public class Appointment
 {
 
     
-    private List<int>[] reservedMinutes = new List<int>[8]; // Array for the list of periods that are available 
 
+    // Array for the list of periods that are available 
+    private List<int>[] reservedMinutes = new List<int>[8]; 
+
+
+//This will begin the portion where we look if any free minutes in a period 
 private bool isMinuteFree(int period, int minute)
     {
         
