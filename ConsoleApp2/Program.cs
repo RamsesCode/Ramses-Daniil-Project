@@ -11,6 +11,10 @@ public class Appointment
 
 // Constructor to begin here
 {
+
+    
+    private List<int>[] reservedMinutes = new List<int>[8]; // Array for the list of periods that are available 
+
 private bool isMinuteFree(int period, int minute)
     {
         
