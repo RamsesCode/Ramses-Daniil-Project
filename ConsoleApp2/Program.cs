@@ -76,3 +76,41 @@ public class Appointment
         return false; // No available time slot found in the given period range
     }
 }
+
+
+
+class Program
+{
+    static void Main()
+    {
+        Appointment scheduler = new Appointment();
+
+        Console.WriteLine("Testing Appointment Scheduler...");
+
+        // Test case 1: Finding a free block
+        int freeBlock = scheduler.findFreeBlock(2, 15);
+        Console.WriteLine(freeBlock != -1 
+            ? $"Free block found in period 2 starting at minute {freeBlock}" 
+            : "No free block available in period 2 for 15 minutes.");
+
+        // Test case 2: Making an appointment
+        bool appointment1 = scheduler.makeAppointment(2, 4, 20);
+        Console.WriteLine(appointment1 
+            ? "Appointment successfully booked!" 
+            : "Failed to book appointment.");
+
+        // Test case 3: Booking a smaller appointment
+        bool appointment2 = scheduler.makeAppointment(3, 4, 5);
+        Console.WriteLine(appointment2 
+            ? "Successfully booked a 5-minute appointment." 
+            : "No available slot for 5 minutes.");
+
+        // Test case 4: Trying to book an appointment that is too long
+        bool appointment3 = scheduler.makeAppointment(1, 3, 50);
+        Console.WriteLine(appointment3 
+            ? "50-minute appointment booked." 
+            : "No available 50-minute block.");
+
+        Console.WriteLine("Test complete.");
+    }
+}
